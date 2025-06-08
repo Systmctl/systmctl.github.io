@@ -23,6 +23,9 @@ footer {
   justify-content: space-around;
   align-items: center;
   height: 4vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 #NavBar {
@@ -51,12 +54,13 @@ footer {
 
 #Content {
   display: flex;
+  height: 100%, auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2em;
   background: linear-gradient(to bottom, var(--cor2), var(--cor1) 50%);
-  padding: 15.6vh 0 15.6vh 0;
+  padding: 1.6vh 0 1.6vh 0;
   > div{
     display: flex;
     flex-direction: column;
