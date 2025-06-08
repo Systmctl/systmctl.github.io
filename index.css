@@ -8,9 +8,15 @@ html{
       font-family: "Inter", sans-serif;
       font-weight: 500;
       font-style: normal;
+       height: 100%;
+      display: flex;
+      flex-direction: column;
 }
 
 body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     color: #CECFE5;
@@ -41,7 +47,7 @@ footer {
   > div{
     display: flex; gap: 1em;
     > div {padding:1em}
-    > div:hove {background-color: var(--cor-hover);}
+    > div:hover {background-color: var(--cor-hover);}
     > div:hover {cursor: url('./cursor/Select.cur') 1 1, auto;}
   };
 }
@@ -54,6 +60,7 @@ footer {
 
 #Content {
   display: flex;
+  flex: 1;
   height: 100%, auto;
   flex-direction: column;
   justify-content: center;
