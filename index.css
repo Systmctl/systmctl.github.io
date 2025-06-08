@@ -38,14 +38,14 @@ footer {
   > div{
     display: flex; gap: 1em;
     > div {padding:1em}
-    > div:active {background-color: var(--cor-hover);}
+    > div:hove {background-color: var(--cor-hover);}
     > div:hover {cursor: url('./cursor/Select.cur') 1 1, auto;}
   };
 }
 
 #NavBar img {
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
