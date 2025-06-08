@@ -1,0 +1,66 @@
+:root {
+    --cor1: #27272A;
+    --cor2: #303036;
+    --cor-hover: rgb(0,0,0, 0.1)
+}
+
+html{
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-style: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: #CECFE5;
+    cursor: url('./cursor/Cursor.cur') 1 1, auto;
+}
+
+footer {
+  display: flex;
+  background: var(--cor2);
+  justify-content: space-around;
+  align-items: center;
+  height: 4vh;
+}
+
+#NavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 1rem;
+  box-shadow: 0 1px 1px #1A1A1C;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--cor1);
+  > div{
+    display: flex; gap: 1em;
+    > div {padding:1em}
+    > div:active {background-color: var(--cor-hover);}
+    > div:hover {cursor: url('./cursor/Select.cur') 1 1, auto;}
+  };
+}
+
+#NavBar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+#Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  background: linear-gradient(to bottom, var(--cor2), var(--cor1) 50%);
+  padding: 15.6vh 0 15.6vh 0;
+  > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+  }
+}
