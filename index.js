@@ -10,11 +10,14 @@ Home.addEventListener('click', () => window.location.href = "./")
 
 const path = window.location.pathname;
 
-let buffer = '';
 document.addEventListener('keydown', (e) => {
-  buffer += e.key;
+  buffer += e.key.toLowerCase();
+
   if (buffer.includes('systmctl')) {
+    easterEggSound.play();
     alert('> Access granted. Welcome back, root.');
     buffer = '';
   }
+
+  if (buffer.length > 20) buffer = buffer.slice(-10);
 });
