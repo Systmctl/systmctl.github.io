@@ -48,9 +48,12 @@ footer {
     align-items: center;
     display: flex; gap: 1em;
     > div {padding:1em}
-    > div:hover {background-color: var(--cor-hover);}
-    > div:hover {cursor: url('./cursor/Select.cur') 1 1, auto;}
+    > div:hover {background-color: var(--cor-hover); transition: background-color 0.2s ease-in-out;}
+    > div:hover {cursor: url('./cursor/Select.cur') 1 1, auto; transition: background-color 0.2s ease-in-out;}
   };
+}
+#NavBar span {
+  font-size: 1.4em;
 }
 
 #NavBar img {
@@ -62,7 +65,7 @@ footer {
 #Content {
   display: flex;
   flex: 1;
-  height: 100%, auto;
+  height: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -75,4 +78,33 @@ footer {
     align-items: center;
     width: 40%;
   }
+}
+
+#terminal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+#terminal-box {
+  background: #111;
+  border: 2px solid #33ff33;
+  color: #33ff33;
+  font-family: 'Courier New', monospace;
+  padding: 2em;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 15px #33ff33;
+}
+
+#terminal-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 1em;
 }
