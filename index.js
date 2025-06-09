@@ -11,7 +11,7 @@ Home.addEventListener('click', () => window.location.href = "./")
 const path = window.location.pathname;
 
 let buffer = '';
-const easterEggSound = new Audio('./sounds/AcessGrantedSound.mp3');
+const easterEggSound = new Audio('./sounds/AccessGrantedSound.mp3');
 
 document.addEventListener('keydown', (e) => {
   buffer += e.key.toLowerCase();
