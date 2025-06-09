@@ -19,8 +19,18 @@ document.addEventListener('keydown', (e) => {
   if (buffer.includes('systmctl')) {
     easterEggSound.play();
     alert('> Access granted. Welcome back, root.');
+    document.body.style.transition = "0.1s";
+    let i = 0;
+    const glitchInterval = setInterval(() => {
+    document.body.style.transform = `rotate(${(Math.random() - 0.5) * 1.5}deg)`;
+    document.body.style.filter = `contrast(${1 + Math.random() * 0.5})`;
+    if (++i > 10) {
+      clearInterval(glitchInterval);
+      document.body.style.transform = "rotate(0deg)";
+      document.body.style.filter = "none";
+    }
+  }, 100);
     buffer = '';
   }
-
   if (buffer.length > 20) buffer = buffer.slice(-10);
 });
