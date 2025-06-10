@@ -37,6 +37,7 @@ footer {
 
 footer span {
   font-size: 0.8vw;
+  color: rgba(206, 207, 229, 0.3);
 }
 
 @media (max-width: 768px) {
