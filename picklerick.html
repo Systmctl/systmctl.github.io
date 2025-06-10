@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
+    <meta name=viewport content=width-device-width, initial-scale=1.0>
+    <link rel=icon href=./images/image1.png type=image/x-icon id="1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel=stylesheet href=../css/index.css>
+    <title> - Systmctl </title>
+     <meta charset="UTF-8"> 
+  </head>  
+  <body>
+    <div id="NavBar">
+      <div class="Username">
+        <a href="https://tryhackme.com/p/Systmctl" target="_blank" rel="noopener noreferrer" title="TryHackMe Profile">
+          <img src="./images/image2.png" alt="Systmctl">
+        </a>
+            <div id="NickName">
+              <a href="https://github.com/Systmctl" target="_blank" rel="noopener noreferrer" title="Github Profile" class="IconLink">
+            <span> - Systmctl </span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div id="Home"> <span> ~/Home </span> </div>
+        <div id="About"> <span> ~/About </span></div>
+        <div id="Writeups"> <span> ~/Writeups </span> </div>
+        <div id="Journal"> <span> ~/Journal </span> </div>
+      </div>
+    </div>
+    <div id="Content">
+      <div>
+        <h1 id="systmctl-writeup-walktrough-pickle-rick-ctf-tryhackme">Systmctl -- Writeup/Walktrough: Pickle Rick CTF | TryHackMe</h1>
+<p><img src="https://hackmd.io/_uploads/r1DK4f8zxe.jpg" alt="47d2d3ade1795f81a155d0aca6e4da96"></p>
+<blockquote>
+<p><strong>Date:</strong> <em>29/05/2025</em>
+<strong>Difficulty:</strong> <em>Beginner</em>
+<strong>Room Link:</strong> <em><a href="https://tryhackme.com/room/picklerick">Pickle Rick CTF</a></em>
+<strong>My TryHackMe Profile:</strong> <em><a href="https://tryhackme.com/p/systmctl">Systmctl</a></em></p>
+</blockquote>
+<hr>
+<p><img src="https://tryhackme-badges.s3.amazonaws.com/systmctl.png" alt="Your Image Badge" /></p>
+<h3 id="hello-i-m-systmctl-in-this-writeup-i-ll-walk-you-through-the-pickle-rick-ctf-a-beginner-friendly-and-entertaining-challenge-based-on-the-rick-and-morty-series-">Hello! I&#39;m <strong>Systmctl</strong>. In this writeup, I&#39;ll walk you through the Pickle Rick CTF — a beginner-friendly and entertaining challenge based on the Rick and Morty series.</h3>
+<h3 id="my-goal-is-to-contribute-directly-to-the-hacking-community-by-sharing-detailed-walkthroughs-and-writeups-of-the-challenges-i-complete-i-hope-this-content-is-helpful-to-others-who-are-learning-or-looking-to-improve-their-skills-">My goal is to contribute directly to the hacking community by sharing detailed walkthroughs and writeups of the challenges I complete. I hope this content is helpful to others who are learning or looking to improve their skills.</h3>
+<hr>
+<p><strong><em>Alright, let’s get started! We’ll begin by launching the machine, wait a couple of minutes for it to boot up, and then jump right into the challenge.</em></strong></p>
+<p>With the machine up and running, I’d like to provide some explanations. Since this is an easy CTF, I believe most readers of this writeup are beginners.</p>
+<p>In general, when performing web application hacking or CTF challenges, we follow some common exploration patterns.</p>
+<p>For example, when you have an IP address hosting a website (i.e., when the HTTP port is open), the very first step is usually to view the page source.</p>
+<p>This is because, both in CTFs and real-world scenarios, developers often leave comments or hints in the HTML source code that can be useful for the attacker.</p>
+<p>Therefore, checking the page source is the initial step in the reconnaissance phase.</p>
+<p><img src="https://hackmd.io/_uploads/H19RUz8zxg.png" alt="VirtualBoxVM_NKl8RCoDEk">
+<strong>As you can see, we found a very important piece of information: a username. This suggests that there is likely a login page on the site. While this username could belong to an SSH user or something similar, it is more common for it to be related to the website’s login. Having this information saves us a lot of time because if a login page is discovered, we won’t need to perform brute force attacks or guess usernames, the CTF has already provided us with one.</strong></p>
+<hr>
+<p><strong>With the initial exploration phase complete for now, we move on to the directory enumeration phase. Basically, we will use a tool that sends requests to the website, checking various directories. Each directory returns a status code, and depending on the response, the tool informs us with messages like “200 – The page exists” or similar. So, let’s get started with the enumeration, in this case i prefer to use the FFUF fuzzing tool.</strong></p>
+<p><img src="https://hackmd.io/_uploads/r1hiOzUMle.png" alt="VirtualBoxVM_Q2M10ZBvSc">
+<strong>With our first scan complete, we can see that it found several directories, but one in particular caught my attention: robots.txt. This is a configuration file for search engines that basically tells them which directories they should or shouldn’t crawl. Usually, this file can contain important information, so it’s essential to check it.</strong></p>
+<p><img src="https://hackmd.io/_uploads/rkKKYGIGxx.png" alt="VirtualBoxVM_Ufzu0cyv8Y">
+<strong>We found one of Rick’s iconic words, lol, I personally find it pretty funny. Now, we have a potential password to access the website.</strong></p>
+<p><strong>Username:</strong> <em>R1ckRul3s</em>
+<strong>Probably Password:</strong> <em>Wubbalubbadubdub</em></p>
+<p><strong>After checking all the other directories, I searched around but didn’t find anything useful, mostly just images and similar files. I also inspected the image metadata using exiftool, but found nothing relevant. Therefore, I’ve decided not to include that part of the process here.</strong></p>
+<p><img src="https://hackmd.io/_uploads/rkrn6GIfgl.png" alt="VirtualBoxVM_mvBPLHO5xL"></p>
+<h2 id="-bingo-running-a-second-scan-with-a-larger-and-more-precise-wordlist-we-found-a-directory-called-login-php-which-confirms-my-theory-that-the-site-has-a-login-page-so-let-s-go-ahead-and-check-it-out-"><strong>BINGO! Running a second scan with a larger and more precise wordlist, we found a directory called login.php, which confirms my theory that the site has a login page. So, let’s go ahead and check it out.</strong></h2>
+<p><img src="https://hackmd.io/_uploads/Hk_MAfUMgx.png" alt="VirtualBoxVM_IANWSdzdIE">
+<strong>Now that we have access to the login page, we can try logging into the site. We’ll use the username we found earlier, along with the potential password we discovered.</strong></p>
+<p><img src="https://hackmd.io/_uploads/S17uRMLfgl.png" alt="VirtualBoxVM_0s41jkM3rS">
+<strong>BINGO again! We’re logged into the site!
+This is a very important step, not just in CTFs, but in real-world hacking as well. Gaining access through a login is often a crucial milestone that defines the next steps you&#39;ll need to take to reach your objective.</strong></p>
+<p><img src="https://hackmd.io/_uploads/ry5V1mLGlg.png" alt="VirtualBoxVM_gt2LvI3b9F">
+<strong>By running a simple ls, we were able to list the website&#39;s directories and spot the first flag. It appears to be located in one of the site&#39;s accessible directories, so let’s navigate to it and capture the first flag.</strong></p>
+<p><strong>First Flag:</strong> <em>mr. meeseek hair</em></p>
+<p><strong>Now that we have a &quot;terminal&quot; at our disposal, we can move on to the next flag. In this case, we’ll use a technique called a reverse shell to gain access to the main terminal, allowing us to interact with the machine more effectively.</strong></p>
+<p><strong>First, we need to listen on a port using Netcat. In this case, we’ll use the following command:</strong></p>
+<p><em>nc -lvnp 1337</em></p>
+<p><strong>This sets up a listener on port 1337, waiting for the reverse shell connection from the target machine.</strong></p>
+<p><img src="https://hackmd.io/_uploads/ryB7WmIMlx.png" alt="image"></p>
+<hr>
+<p>Now we’re going to use a reverse shell to gain access to the machine.</p>
+<p><img src="https://hackmd.io/_uploads/HJMhGQLMlx.png" alt="image">
+<strong>After using the reverse shell in this CTF, we successfully gained access to the machine. Now, we can begin the enumeration process, checking files, directories, and other useful information within the target system.</strong></p>
+<p><img src="https://hackmd.io/_uploads/BJY_mXIfge.png" alt="image">
+We found a directory inside /home called rick. Let’s cd into it and see what’s inside.</p>
+<p><img src="https://hackmd.io/_uploads/HktzVQLfll.png" alt="image">
+<strong>We found the second flag; now we just need to access it and view its contents.</strong></p>
+<p><img src="https://hackmd.io/_uploads/SJFKV78fle.png" alt="image">
+<strong>We got the second flag! Now, we can move on to the third flag!!!</strong></p>
+<p><strong>Second Flag:</strong> <em>1 jerry tear</em></p>
+<p><img src="https://hackmd.io/_uploads/HktfHXIzel.png" alt="image">
+<strong>By using sudo su, we gained root access. Now, we can enumerate and locate the third flag.</strong></p>
+<p><img src="https://hackmd.io/_uploads/r1z5BQ8Gxl.png" alt="image">
+<strong>We accessed the /root directory, and inside it was the third flag. With that, we have completed all three challenges.</strong></p>
+<p><strong>Third Flag:</strong> <em>fleeb juice</em></p>
+<p><img src="https://hackmd.io/_uploads/SJfbUmUfel.png" alt="image"></p>
+<p><img src="https://tryhackme-badges.s3.amazonaws.com/systmctl.png" alt="Your Image Badge" /></p>
+
+        </div>
+<div id="WriteupViewer"></div>
+      </div>
+    </div>
+    <footer> 
+        <span> Hacken bedeutet nicht zu zerstören, sondern zu verstehen. </span>
+        <span> @Copyright Systmctl since 2025. </span>
+    </footer>
+  </body>
+    <script src="../js/index.js" defer></script>
+</html>
