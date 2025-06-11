@@ -85,6 +85,7 @@ footer span:hover {
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  cursor: url('../cursor/Select.cur') 1 1, auto;
 }
 
 #NickName a {
@@ -94,6 +95,7 @@ footer span:hover {
 
 #NickName a:hover {
   text-decoration: underline;
+  cursor: url('../cursor/Select.cur') 1 1, auto;
 }
 
 #Content {
@@ -112,4 +114,16 @@ footer span:hover {
     align-items: center;
     width: 40%;
   }
+}
+
+#RWriteups a,
+#RJournals a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#RWriteups a:hover,
+#RJournals a:hover {
+  text-decoration: underline;
+  cursor: url('../cursor/Select.cur') 1 1, auto;
 }
