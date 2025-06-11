@@ -56,6 +56,21 @@ footer span:hover {
   }
 }
 
+#Content a {
+  transition: all 0.2s ease-in-out;
+  color: inherit; /* mantém cor padrão */
+  text-decoration: none;
+}
+
+#Content a:hover {
+  background-color: var(--cor-hover);
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  cursor: url('../cursor/Select.cur') 1 1, auto;
+  border-radius: 6px;
+  padding: 0.1em 0.3em;
+}
+
 #NavBar {
   display: flex;
   align-items: center;
