@@ -86,6 +86,13 @@ footer span:hover {
   height: 60px;
   border-radius: 50%;
   cursor: url('../cursor/Select.cur') 1 1, auto;
+  transition: all 0.2s ease-in-out;
+}
+
+#NavBar img:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  cursor: url('../cursor/Select.cur') 1 1, auto;
 }
 
 #NickName a {
@@ -125,5 +132,27 @@ footer span:hover {
 #RWriteups a:hover,
 #RJournals a:hover {
   text-decoration: underline;
+  cursor: url('../cursor/Select.cur') 1 1, auto;
+}
+
+#Content a.writeup-card {
+  transition: all 0.2s ease-in-out;
+}
+
+#Content a.writeup-card:hover {
+  background-color: var(--cor-hover);
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  cursor: url('../cursor/Select.cur') 1 1, auto;
+}
+
+#Content a.journal-card {
+  transition: all 0.2s ease-in-out;
+}
+
+#Content a.journal-card:hover {
+  background-color: var(--cor-hover);
+  filter: brightness(1.2);
+  transform: scale(1.05);
   cursor: url('../cursor/Select.cur') 1 1, auto;
 }
