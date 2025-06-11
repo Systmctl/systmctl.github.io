@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+  <head>
+        <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+      #Content img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+    }
+    </style>
+    <meta name=viewport content=width-device-width, initial-scale=1.0>
+    <link rel=icon href=./images/image1.png type=image/x-icon id="1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <link rel=stylesheet href=../css/index.css>
+    <title> - Systmctl </title>
+     <meta charset="UTF-8"> 
+  </head>  
+  <body>
+    <div id="NavBar">
+      <div class="Username">
+        <a href="https://tryhackme.com/p/Systmctl" target="_blank" rel="noopener noreferrer" title="TryHackMe Profile">
+          <img src="./images/image2.png" alt="Systmctl">
+        </a>
+        <div id="NickName">
+          <a href="https://github.com/Systmctl" target="_blank" rel="noopener noreferrer" title="Github Profile" class="IconLink">
+            <span> - Systmctl </span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div id="Home"> <span> ~/Home </span> </div>
+        <div id="About"> <span> ~/About </span></div>
+        <div id="Writeups"> <span> ~/Writeups </span> </div> 
+        <div id="Journal"> <span> ~/Journal </span> </div>
+      </div>
+    </div>
+    <div id="Content">
+        <h1 id="systmctl-journal-tutorial-installing-kali-linux-pentesting">
+  Systmctl - Journal/Tutorial: Installing Kali Linux | Pentesting
+</h1>
+
+<p><img src="https://hackmd.io/_uploads/ryV-U6rmex.png" alt="Gns38"></p>
+
+<blockquote>
+  <p>
+    <strong>Date:</strong> <em>10/06/2025</em><br>
+    <strong>Difficulty:</strong> <em>Beginner</em>
+  </p>
+</blockquote>
+
+<h3 id="-hello-i-m-systmctl-this-is-the-first-documentation-i-am-making-in-the-journal-of-knowledge-this-is-beginner-friendly-and-you-can-do-this-">
+  <strong>
+    Hello! I'm Systmctl. This is the first documentation I am making in the Journal of Knowledge. This is beginner-friendly, and you can do this.
+  </strong>
+</h3>
+
+<hr>
+
+<p><strong>
+  To begin, you need to download a virtualizer (Virtual Machine) in order to run the system within a "virtual" hard drive. There are several options available, and the best ones will be listed below.
+</strong></p>
+
+<blockquote>
+  <ul>
+    <li>Q-Emu</li>
+    <li>Oracle Machine</li>
+    <li>VmWare</li>
+  </ul>
+</blockquote>
+
+<p><em>
+  As you have probably never done this before, I recommend using <a href="https://www.virtualbox.org">Oracle Machine</a>, as it is the most accessible and easiest option to use.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/H1T4g0BXgx.png" alt="RP1K1R5biT"></p>
+
+<p><em>
+  Once you access the website, you will see an option labeled "Windows Hosts", click on it. This is the version intended for Windows operating systems.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/BkMjlCSXee.png" alt="firefox_xBLQCL2kHS"></p>
+
+<p><em>
+  Download the .exe file, install it properly, and open the installed program.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/BJDP-ABQee.png" alt="VirtualBox_yoWsjSGWq4"></p>
+
+<hr>
+
+<p><em>
+  Now that we have installed our virtualizer from <a href="https://www.virtualbox.org">Oracle</a>, we need to install the .iso image of Kali Linux. In this case, you can install any operating system to practice hacking in general; however, Linux distributions offer greater ease when handling tools, are lighter systems, and can be configured to become true security fortresses.
+</em></p>
+
+<p><em>
+  You also don't need to be attached to Kali Linux — it is essentially just a Linux system with pre-installed tools. You could install Parrot OS, which is also focused on hacking, or even choose any other Linux distro and manually install the tools from scratch. However, since you have probably never done this before, it is recommended that you follow my step-by-step guide exactly.
+</em></p>
+
+<p><em>
+  I recommend installing <a href="https://www.qbittorrent.org/">Q-Bittorrent</a>, a torrent client based on the Bittorrent protocol. It is an open-source and trustworthy alternative to uTorrent. In the hacking world, always prefer open-source software.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/BJW0QAr7xe.png" alt="firefox_OM8TRjqs3u"></p>
+
+<p><em>
+  After that, go to the Kali Linux website and download the <a href="https://cdimage.kali.org/kali-2025.1c/kali-linux-2025.1c-installer-amd64.iso.torrent">ISO</a> image using Qbittorrent, then wait for the download to complete.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/ByCR40S7el.png" alt="qbittorrent_dGOVhNciIt"></p>
+
+<hr>
+
+<p><em>
+  After downloading the Kali Linux .iso file, open the Oracle VirtualBox software and click on "New".
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/rkXRLCrmxg.png" alt="VirtualBox_qVenJngAmE"></p>
+
+<p><em>
+  After clicking on "New", assign a name to your Virtual Machine and select the kali-linux.iso image from the directory where you downloaded it.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/rJg4vRB7xl.png" alt="VirtualBox_0jPMRrEFym"></p>
+
+<p><em>
+  After that, click on 'Hardware' and configure the processing and RAM settings for the virtual machine.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/ry7DPAHXex.png" alt="VirtualBox_5Abe4R15it"></p>
+
+<h3 id="-in-this-case-you-will-notice-that-there-are-these-bars-and-up-to-a-certain-point-they-remain-green-this-depends-heavily-on-your-hardware-overall-however-adjust-the-settings-so-that-they-stay-within-the-green-area-exactly-as-shown-in-my-example-">
+  <strong>
+    In this case, you will notice that there are these bars, and up to a certain point they remain green. This depends heavily on your hardware overall; however, adjust the settings so that they stay within the green area, exactly as shown in my example:
+  </strong>
+</h3>
+
+<p><img src="https://hackmd.io/_uploads/S1f2DCr7gg.png" alt="VirtualBox_eXpBgj6oHy"></p>
+
+<p><em>
+  After completing that, click on 'Hard Disk'.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/ryT7O0SQee.png" alt="VirtualBox_mjpwBZryUx"></p>
+
+<h3 id="-this-option-depends-on-the-available-space-on-your-computer-s-hard-drive-specifically-your-hdd-or-ssd-select-an-amount-based-on-your-available-storage-in-my-case-i-will-choose-60gb-">
+  <strong>
+    This option depends on the available space on your computer’s hard drive, specifically your HDD or SSD. Select an amount based on your available storage. In my case, I will choose 60GB.
+  </strong>
+</h3>
+
+<p><em>
+  Once the configuration is complete, finalize the setup.
+</em></p>
+
+<hr>
+
+<p><em>
+  With the virtual machine configured and finalized, let’s click on Start.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/SkeCORrXgl.png" alt="VirtualBox_onRbwWvDGf"></p>
+
+<p><em>
+  After clicking Start, if you have followed the steps correctly, this software should appear:
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/SyJ4t0rmlx.png" alt="VirtualBoxVM_QZi6Ns9ZUs"></p>
+
+<h3 id="it-is-extremely-important-that-you-select-graphical-install-as-it-will-use-a-graphical-interface-to-assist-you-with-the-installation-">
+  It is extremely important that you select Graphical Install, as it will use a graphical interface to assist you with the installation.
+</h3>
+
+<p><em>
+  There are other options, such as Normal Install, which basically requires you to use only the terminal to configure the system from scratch. This option is intended for advanced users and will not be covered in this documentation. However, if you want to challenge yourself and gain extensive knowledge, you may choose Normal Install, but it is not recommended for beginners.
+</em></p>
+
+<hr>
+
+<p><em>
+  After selecting Graphical Install, if everything proceeds correctly, you will notice that you have entered the manual graphical installation environment.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/B1dlj0SQgl.png" alt="VirtualBoxVM_TSUCdDQhwN"></p>
+
+<p><strong>
+  On this first screen, you should select the language for your Operating System and the installation interface.
+</strong></p>
+
+<p><img src="https://hackmd.io/_uploads/HyQ4oRSXge.png" alt="VirtualBoxVM_SXtrKTFE8d"></p>
+
+<p><em>
+  On the second screen, you should select your location.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/Bk1DjABmlg.png" alt="VirtualBoxVM_JbNYGXjS5F"></p>
+
+<p><em>
+  On the third screen, select your keyboard layout correctly.
+</em></p>
+
+<p><em>
+  The installer will perform some basic configurations, just wait patiently.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/r1J0sCHXge.png" alt="VirtualBoxVM_NX2fk1CGq0"></p>
+
+<p><em>
+  On this screen, enter your Hostname, the name your computer will use on the network. In my case, I prefer to use "desktop" to maintain my OPSEC and blend in with others.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/HkyGn0B7xe.png" alt="VirtualBoxVM_ivmH11cGMF"></p>
+
+<p><em>
+  Here, you will choose the password for your User account as well as for the Root user.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/H1dL30Smgl.png" alt="VirtualBoxVM_qDnHoUzUVc"></p>
+
+<h3 id="on-this-screen-it-is-very-important-that-you-select-the-first-option-">
+  On this screen, it is very important that you select the first option.
+</h3>
+
+<p><img src="https://hackmd.io/_uploads/Hkl9hCrXeg.png" alt="VirtualBoxVM_1veGkCDwT8"></p>
+
+<h3 id="on-this-screen-you-must-also-select-the-first-option-without-exception-">
+  On this screen, you must also select the first option without exception.
+</h3>
+
+<p><img src="https://hackmd.io/_uploads/rkPp2RrQlx.png" alt="VirtualBoxVM_jrvJeqyMAb"></p>
+
+<p><strong>
+  Here, you should select the "yes" option to allow modifications to the virtual hard disk.
+</strong></p>
+
+<p><em>
+  The installer will then proceed to install essential components, including the base system and other necessary files. This step may take some time depending on your computer or laptop’s hardware specifications.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/BkSHT0B7xl.png" alt="VirtualBoxVM_tK0sH8yL5J"></p>
+
+<p><em>
+  Here, leave the settings as they are, do not add or remove anything.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/r1uPTCHQlx.png" alt="VirtualBoxVM_zw7idvxr4u"></p>
+
+<p><em>
+  This part takes the longest, and it is normal for it to take quite some time because it is installing the Desktop Environment and the pre-installed tools.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/rJsOeJUmex.png" alt="VirtualBoxVM_FkHVbY8NfM"></p>
+
+<p><em>
+  After the software installation is complete, on this screen you should select "yes".
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/SyYsE1UQee.png" alt="VirtualBoxVM_jBrsNUcfio"></p>
+
+<p><em>
+  After installing the bootloader, you will complete the installation.
+</em></p>
+
+<p><img src="https://hackmd.io/_uploads/HkjX0G8Xgx.png" alt="release-2020.2-login-light"></p>
+
+<p><em>
+  Then, enter the username you chose along with the corresponding password.
+</em></p>
+    </div>
+    <footer> 
+        <span> Hacken bedeutet nicht zu zerstören, sondern zu verstehen. </span>
+        <span> @Copyright Systmctl since 2025. </span>
+    </footer>
+  </body>
+  <script src="../js/index.js" defer></script>
+</html>
