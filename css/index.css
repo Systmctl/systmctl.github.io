@@ -171,3 +171,15 @@ footer span:hover {
   transform: scale(1.05);
   cursor: url('../cursor/Select.cur') 1 1, auto;
 }
+
+#RWriteups h2 a,
+#RJournals h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#RWriteups h2 a:hover,
+#RJournals h2 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
